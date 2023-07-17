@@ -1,42 +1,57 @@
-<html>
+<!DOCTYPE html>
 <html lang="es">
-	<head>
-	  <meta charset="UTF-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	  <title>Pagina de SeND</title>
-	  <style>
-		body {
-		  margin: 0;
-		  padding: 0;
-		}
-	
-		.mosaic-container {
-		  display: grid;
-		  grid-template-columns: repeat(3, 1fr); /* Cambia el número 3 si deseas más columnas */
-		  gap: 10px; /* Espacio entre las imágenes */
-		  padding: 20px; /* Espacio alrededor del mosaico */
-		}
-	
-		.mosaic-item {
-		  display: flex;
-		  justify-content: center;
-		  align-items: center;
-		  border: 1px solid #ddd; /* Borde para separar las imágenes (opcional) */
-		  padding: 10px; /* Espacio alrededor de cada imagen (opcional) */
-		}
-	
-		.mosaic-item img {
-		  max-width: 100%;
-		  max-height: 100%;
-		}
-	  </style>
-	</head>
-	<body>
-	  <div class="mosaic-container">
-		<div class="mosaic-item"><img src="ColorVolts.png" alt="Color-Volts"></div>
-		<div class="mosaic-item"><img src="ByD.png" alt="B&D"></div>
-		<div class="mosaic-item"><img src="SeND.png" alt="Escuela"></div>
-		<!-- Agrega más imágenes aquí <div class="mosaic-item"><img src="imagen3.jpg" alt="Otros"></div> -->
-	  </div>
-	</body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mosaico de Imágenes con Leyendas</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .mosaic-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* Cambia el número 3 si deseas más columnas */
+      gap: 10px; /* Espacio entre las imágenes */
+      padding: 20px; /* Espacio alrededor del mosaico */
+    }
+
+    .mosaic-item {
+      display: flex;
+      flex-direction: column; /* Para apilar la imagen y la leyenda verticalmente */
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #ddd; /* Borde para separar las imágenes (opcional) */
+      padding: 10px; /* Espacio alrededor de cada imagen (opcional) */
+    }
+
+    .mosaic-item img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .image-caption {
+      margin-top: 10px; /* Espacio entre la imagen y la leyenda */
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="mosaic-container">
+    <div class="mosaic-item">
+      <img src="ColorVolts.png" alt="Imagen 1">
+      <div class="image-caption">Leyenda de la imagen 1</div>
+    </div>
+    <div class="mosaic-item">
+      <img src="ByD.png" alt="Imagen 2">
+      <div class="image-caption">Leyenda de la imagen 2</div>
+    </div>
+    <div class="mosaic-item">
+      <img src="SeND.png" alt="Imagen 3">
+      <div class="image-caption">Leyenda de la imagen 3</div>
+    </div>
+    <!-- Agrega más imágenes aquí -->
+  </div>
+</body>
 </html>
