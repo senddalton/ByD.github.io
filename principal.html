@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mosaico de Imágenes con Enlaces</title>
+  <title>Página de SeND</title>
   <style>
     body {
       margin: 0;
@@ -18,9 +18,10 @@
     }
 
     .mosaic-item {
+      position: relative; /* Posición relativa para alinear la leyenda */
       display: flex;
       flex-direction: column; /* Para apilar la imagen y la leyenda verticalmente */
-      justify-content: center;
+      justify-content: flex-end; /* Alineamos la leyenda al final del contenedor */
       align-items: center;
       border: 1px solid #ddd; /* Borde para separar las imágenes (opcional) */
       padding: 10px; /* Espacio alrededor de cada imagen (opcional) */
@@ -31,13 +32,8 @@
       max-height: 100%;
     }
 
-    /* Pseudo-elemento para mostrar la leyenda */
-    .mosaic-item::after {
-      content: attr(data-caption); /* Contenido del pseudo-elemento, tomado del atributo data-caption */
-      position: absolute;
-      bottom: 0; /* Colocamos la leyenda en la parte inferior */
-      left: 0;
-      width: 100%;
+    /* Leyenda */
+    .image-caption {
       background-color: rgba(0, 0, 0, 0.7); /* Color de fondo de la leyenda */
       color: #fff; /* Color del texto de la leyenda */
       padding: 8px;
@@ -47,21 +43,24 @@
     }
 
     /* Estilo de la leyenda cuando el ratón pasa por encima del mosaico */
-    .mosaic-item:hover::after {
+    .mosaic-item:hover .image-caption {
       opacity: 1;
     }
   </style>
 </head>
 <body>
   <div class="mosaic-container">
-    <a href="enlace1.html" class="mosaic-item" data-caption="Color-Volts">
+    <a href="enlace1.html" class="mosaic-item">
       <img src="ColorVolts.png" alt="Imagen 1">
+      <div class="image-caption"><h1>Color-Volts</h1></div>
     </a>
-    <a href="enlace2.html" class="mosaic-item" data-caption="B&D">
+    <a href="enlace2.html" class="mosaic-item">
       <img src="ByD.png" alt="Imagen 2">
+      <div class="image-caption"><h1>B&D</h1></div>
     </a>
-    <a href="enlace3.html" class="mosaic-item" data-caption="Escuela">
+    <a href="enlace3.html" class="mosaic-item">
       <img src="SeND.png" alt="Imagen 3">
+      <div class="image-caption"><h1>Escuela</h1></div>
     </a>
     <!-- Agrega más enlaces e imágenes aquí -->
   </div>
