@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mosaico de Imágenes con Leyendas</title>
+  <title>Mosaico de Imágenes con Leyendas Externas</title>
   <style>
     body {
       margin: 0;
@@ -19,7 +19,7 @@
 
     .mosaic-item {
       display: flex;
-      flex-direction: column; /* Para apilar la imagen y la leyenda verticalmente */
+      position: relative; /* Posición relativa para poder posicionar el pseudo-elemento */
       justify-content: center;
       align-items: center;
       border: 1px solid #ddd; /* Borde para separar las imágenes (opcional) */
@@ -31,25 +31,37 @@
       max-height: 100%;
     }
 
-    .image-caption {
-      margin-top: 10px; /* Espacio entre la imagen y la leyenda */
+    /* Pseudo-elemento para mostrar la leyenda */
+    .mosaic-item::after {
+      content: attr(data-caption); /* Contenido del pseudo-elemento, tomado del atributo data-caption */
+      position: absolute;
+      bottom: 0; /* Colocamos la leyenda en la parte inferior */
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7); /* Color de fondo de la leyenda */
+      color: #fff; /* Color del texto de la leyenda */
+      padding: 8px;
       text-align: center;
+      opacity: 0; /* Inicialmente ocultamos la leyenda */
+      transition: opacity 0.3s ease; /* Transición para mostrar la leyenda cuando el ratón pasa por encima */
+    }
+
+    /* Estilo de la leyenda cuando el ratón pasa por encima del mosaico */
+    .mosaic-item:hover::after {
+      opacity: 1;
     }
   </style>
 </head>
 <body>
   <div class="mosaic-container">
-    <div class="mosaic-item">
+    <div class="mosaic-item" data-caption="Leyenda de la imagen 1">
       <img src="ColorVolts.png" alt="Imagen 1">
-      <div class="image-caption">Leyenda de la imagen 1</div>
     </div>
-    <div class="mosaic-item">
+    <div class="mosaic-item" data-caption="Leyenda de la imagen 2">
       <img src="ByD.png" alt="Imagen 2">
-      <div class="image-caption">Leyenda de la imagen 2</div>
     </div>
-    <div class="mosaic-item">
+    <div class="mosaic-item" data-caption="Leyenda de la imagen 3">
       <img src="SeND.png" alt="Imagen 3">
-      <div class="image-caption">Leyenda de la imagen 3</div>
     </div>
     <!-- Agrega más imágenes aquí -->
   </div>
