@@ -60,16 +60,55 @@
     /* Contenido de la página */
     .content {
       position: relative;
-      z-index: 1; /* Valor inferior para las figuras geométricas */
-      margin-left: 250px; /* Ancho de la barra lateral */
+      z-index: 1;
       padding: 20px;
+      margin-left: 250px;
     }
 
+    /* Botón para mostrar/ocultar la barra lateral en pantallas pequeñas */
+    .toggle-button {
+      display: none;
+    }
+
+    /* Estilos para pantallas pequeñas */
+    @media (max-width: 768px) {
+      div.sidebar {
+        width: 100%;
+        border-top-right-radius: 0;
+        left: -250px; /* Oculta la barra lateral fuera de la pantalla */
+        transition: left 0.3s ease; /* Agregamos una transición para suavizar el efecto */
+      }
+
+      .toggle-button {
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 3;
+        background-color: #11cf4d;
+        color: #fff;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .content {
+        margin-left: 0;
+      }
+
+      /* Estilo adicional para mostrar la barra lateral cuando se hace clic en el botón */
+      .show-sidebar div.sidebar {
+        left: 0;
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- Botón para mostrar/ocultar la barra lateral -->
+  <div class="toggle-button" onclick="toggleSidebar()">☰</div>
+
   <!-- Sidebar Div -->
-  <div class="sidebar">
+  <div class="sidebar" id="sidebar">
     <!-- Div Header -->
     <h2>GeeksforGeeks</h2>
 
@@ -144,9 +183,15 @@
 
   <!-- Contenido de la página -->
   <div class="content">
-    <h1>Bienvenido a Color-Volts</h1>
+    <h1>Bienvenido</h1>
     <p>Contenido de tu página aquí...</p>
   </div>
 
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('show-sidebar');
+    }
+  </script>
 </body>
 </html>
