@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fondo con Figuras Geométricas</title>
+  <title>Fondo con Figuras Geométricas y Barra Lateral</title>
   <style>
     body {
       margin: 0;
@@ -15,9 +15,72 @@
       position: absolute;
       background-color: transparent;
     }
+
+    /* Sidebar Div */
+    div.sidebar {
+      color: #fff;
+      width: 250px;
+      padding-left: 20px;
+      height: 100vh;
+      background-image: linear-gradient(30deg, #11cf4d, #055e21);
+      border-top-right-radius: 90px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+    }
+
+    /* Div header */
+    div.sidebar h2 {
+      padding: 40px 0 0 0;
+      cursor: pointer;
+    }
+
+    /* Div links */
+    div.sidebar a {
+      font-size: 14px;
+      color: #fff;
+      display: block;
+      padding: 12px;
+      padding-left: 30px;
+      text-decoration: none;
+      outline: none;
+    }
+
+    /* Div link on hover */
+    div.sidebar a:hover {
+      color: #56ff38;
+      background: #fff;
+      position: relative;
+      background-color: #fff;
+      border-top-left-radius: 22px;
+      border-bottom-left-radius: 22px;
+    }
+
+    /* Contenido de la página */
+    .content {
+      position: relative;
+      z-index: 1; /* Valor inferior para las figuras geométricas */
+      margin-left: 250px; /* Ancho de la barra lateral */
+      padding: 20px;
+    }
+
   </style>
 </head>
 <body>
+  <!-- Sidebar Div -->
+  <div class="sidebar">
+    <!-- Div Header -->
+    <h2>GeeksforGeeks</h2>
+
+    <!-- Links in Div -->
+    <a href="#">Data Structures</a>
+    <a href="#">Algorithms</a>
+    <a href="#">Interview Preparation</a>
+    <a href="#">Python</a>
+    <a href="#">Java</a>
+  </div>
+
   <!-- Figuras Geométricas -->
   <script>
     function getRandomColor() {
@@ -80,9 +143,10 @@
   </script>
 
   <!-- Contenido de la página -->
-  <div style="position: relative; z-index: 1;">
-    <h1>Bienvenido</h1>
+  <div class="content">
+    <h1>Bienvenido a Color-Volts</h1>
     <p>Contenido de tu página aquí...</p>
   </div>
+
 </body>
 </html>
