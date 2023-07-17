@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fondo con Triángulos de Colores</title>
+  <title>Fondo con Figuras Geométricas</title>
   <style>
     body {
       margin: 0;
@@ -11,17 +11,14 @@
       overflow: hidden;
     }
 
-    .triangle {
-      width: 0;
-      height: 0;
-      border-style: solid;
+    .shape {
       position: absolute;
-      transform-origin: bottom left;
+      background-color: transparent;
     }
   </style>
 </head>
 <body>
-  <!-- Triángulos -->
+  <!-- Figuras Geométricas -->
   <script>
     function getRandomColor() {
       const letters = '0123456789ABCDEF';
@@ -32,23 +29,53 @@
       return color;
     }
 
-    function createTriangle() {
-      const triangle = document.createElement('div');
-      triangle.classList.add('triangle');
-      const size = Math.floor(Math.random() * 100) + 50;
-      const color = getRandomColor();
-      triangle.style.borderWidth = `0 ${size}px ${size * 1.732}px 0`;
-      triangle.style.borderColor = `transparent ${color} transparent transparent`;
-      const x = Math.floor(Math.random() * window.innerWidth);
-      const y = Math.floor(Math.random() * window.innerHeight);
-      triangle.style.left = `${x}px`;
-      triangle.style.top = `${y}px`;
-      triangle.style.transform = `rotate(${Math.random() * 360}deg)`;
-      document.body.appendChild(triangle);
+    function getRandomShape() {
+      const shapes = ['triangle', 'circle', 'square', 'rectangle'];
+      return shapes[Math.floor(Math.random() * shapes.length)];
     }
 
-    for (let i = 0; i < 50; i++) {
-      createTriangle();
+    function createShape() {
+      const shape = document.createElement('div');
+      shape.classList.add('shape');
+      const size = Math.floor(Math.random() * 100) + 50;
+      const color = getRandomColor();
+      const shapeType = getRandomShape();
+
+      shape.style.width = `${size}px`;
+      shape.style.height = `${size}px`;
+      shape.style.backgroundColor = color;
+
+      if (shapeType === 'triangle') {
+        shape.style.clipPath = 'polygon(50% 0%, 0% 100%, 100% 100%)';
+      } else if (shapeType === 'circle') {
+        shape.style.borderRadius = '50%';
+      } else if (shapeType === 'square') {
+        // No se necesita modificar nada, ya que es un cuadrado.
+      } else if (shapeType === 'rectangle') {
+        shape.style.width = `${size * 1.5}px`;
+        // Puedes ajustar la relación de aspecto del rectángulo cambiando el valor 1.5 según tus preferencias.
+      }
+
+      const x = Math.floor(Math.random() * window.innerWidth);
+      const y = Math.floor(Math.random() * window.innerHeight);
+      shape.style.left = `${x}px`;
+      shape.style.top = `${y}px`;
+
+      document.body.appendChild(shape);
+    }
+
+    window.addEventListener('resize', () => {
+      const shapes = document.querySelectorAll('.shape');
+      shapes.forEach(shape => {
+        const x = Math.floor(Math.random() * window.innerWidth);
+        const y = Math.floor(Math.random() * window.innerHeight);
+        shape.style.left = `${x}px`;
+        shape.style.top = `${y}px`;
+      });
+    });
+
+    for (let i = 0; i < 100; i++) {
+      createShape();
     }
   </script>
 
