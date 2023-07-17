@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fondo con Triángulos de Colores</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Para evitar barras de desplazamiento */
+    }
+
+    /* Estilo de los triángulos */
+    .triangle {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      position: absolute;
+    }
+
+    /* Tamaño de los triángulos */
+    .triangle {
+      border-width: 0 50px 86.6px 50px;
+      /* 86.6px ≈ (50px * √3) / 2 */
+    }
+
+    /* Colores de los triángulos (cambia los colores como desees) */
+    .triangle:nth-child(1) {
+      border-color: #FF4500 transparent transparent transparent;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(0);
+    }
+
+    .triangle:nth-child(2) {
+      border-color: #00FFFF transparent transparent transparent;
+      top: 40%;
+      left: 25%;
+      transform: translate(-25%, -40%) rotate(0);
+    }
+
+    .triangle:nth-child(3) {
+      border-color: #FFD700 transparent transparent transparent;
+      top: 10%;
+      left: 70%;
+      transform: translate(-70%, -10%) rotate(0);
+    }
+
+	.triangle:nth-child(4) {
+      border-color: #EACD78 transparent transparent transparent;
+      top: 10%;
+      left: 70%;
+      transform: translate(-10%, -12%) rotate(0);
+    }
+
+	.triangle:nth-child(5) {
+      border-color: #2687EC transparent transparent transparent;
+      top: 10%;
+      left: 70%;
+      transform: translate(-15%, -60%) rotate(0);
+    }
+
+	.triangle:nth-child(6) {
+      border-color: #FF3476 transparent transparent transparent;
+      top: 10%;
+      left: 70%;
+      transform: translate(-70%, -80%) rotate(0);
+    }
+
+	.triangle:nth-child(7) {
+      border-color: #99FF78 transparent transparent transparent;
+      top: 10%;
+      left: 70%;
+      transform: translate(-20%, -22%) rotate(0);
+    }
+
+	.triangle:nth-child(8) {
+      border-color: #000000 transparent transparent transparent;
+      top: 10%;
+      left: 70%;
+      transform: translate(-17%, -70%) rotate(0);
+    }
+
+    /* Agrega más triángulos con diferentes colores y posiciones */
+  </style>
+</head>
+<body>
+  <!-- Triángulos -->
+  <div class="triangle"></div>
+  <div class="triangle"></div>
+  <div class="triangle"></div>
+  <div class="triangle"></div>
+  <div class="triangle"></div>
+  <div class="triangle"></div>
+  <div class="triangle"></div>
+  <div class="triangle"></div>
+  <!-- Agrega más triángulos con diferentes colores y posiciones -->
+
+  <!-- Contenido de la página -->
+  <div style="position: relative; z-index: 1;">
+    <h1>Bienvenido</h1>
+    <p>Contenido de tu página aquí...</p>
+  </div>
+</body>
+</html>
