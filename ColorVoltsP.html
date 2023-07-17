@@ -3,195 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fondo con Figuras Geométricas y Barra Lateral</title>
+  <title>Mi Página con Barra Superior</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      overflow: hidden;
     }
 
-    .shape {
-      position: absolute;
-      background-color: transparent;
-    }
-
-    /* Sidebar Div */
-    div.sidebar {
+    /* Barra Superior */
+    .top-bar {
+      background-color: #333;
       color: #fff;
-      width: 250px;
-      padding-left: 20px;
-      height: 100vh;
-      background-image: linear-gradient(30deg, #11cf4d, #055e21);
-      border-top-right-radius: 90px;
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
     }
 
-    /* Div header */
-    div.sidebar h2 {
-      padding: 40px 0 0 0;
-      cursor: pointer;
+    /* Estilo para el nombre de la empresa */
+    .company-name {
+      font-size: 24px;
+      margin-left: 20px;
     }
 
-    /* Div links */
-    div.sidebar a {
-      font-size: 14px;
-      color: #fff;
-      display: block;
-      padding: 12px;
-      padding-left: 30px;
-      text-decoration: none;
-      outline: none;
+    /* Estilo para el logotipo en forma de círculo */
+    .logo-circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden; /* Para que el SVG se muestre completamente dentro del círculo */
+      background-color: transparent; /* Quitamos el fondo blanco del contenedor */
+      border: 2px solid #fff; /* Agregamos un borde blanco al círculo */
     }
 
-    /* Div link on hover */
-    div.sidebar a:hover {
-      color: #56ff38;
-      background: #fff;
-      position: relative;
-      background-color: #fff;
-      border-top-left-radius: 22px;
-      border-bottom-left-radius: 22px;
+    /* Estilo para el SVG dentro del círculo */
+    .logo-img {
+      width: 40px;
+      height: 40px;
     }
 
-    /* Contenido de la página */
+    /* Estilo para el contenido de la página */
     .content {
-      position: relative;
-      z-index: 1;
       padding: 20px;
-      margin-left: 250px;
     }
 
-    /* Botón para mostrar/ocultar la barra lateral en pantallas pequeñas */
-    .toggle-button {
-      display: none;
-    }
-
-    /* Estilos para pantallas pequeñas */
+    /* Ajustes para pantallas más pequeñas */
     @media (max-width: 768px) {
-      div.sidebar {
-        width: 100%;
-        border-top-right-radius: 0;
-        left: -250px; /* Oculta la barra lateral fuera de la pantalla */
-        transition: left 0.3s ease; /* Agregamos una transición para suavizar el efecto */
+      .company-name {
+        font-size: 20px;
       }
 
-      .toggle-button {
-        display: block;
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        z-index: 3;
-        background-color: #11cf4d;
-        color: #fff;
-        padding: 10px;
-        border-radius: 50%;
-        cursor: pointer;
+      .logo-circle {
+        width: 40px;
+        height: 40px;
       }
 
-      .content {
-        margin-left: 0;
-      }
-
-      /* Estilo adicional para mostrar la barra lateral cuando se hace clic en el botón */
-      .show-sidebar div.sidebar {
-        left: 0;
+      /* Ajusta el tamaño del SVG para pantallas más pequeñas */
+      .logo-img {
+        width: 30px;
+        height: 30px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Botón para mostrar/ocultar la barra lateral -->
-  <div class="toggle-button" onclick="toggleSidebar()">☰</div>
-
-  <!-- Sidebar Div -->
-  <div class="sidebar" id="sidebar">
-    <!-- Div Header -->
-    <h2>GeeksforGeeks</h2>
-
-    <!-- Links in Div -->
-    <a href="#">Data Structures</a>
-    <a href="#">Algorithms</a>
-    <a href="#">Interview Preparation</a>
-    <a href="#">Python</a>
-    <a href="#">Java</a>
+  <!-- Barra Superior -->
+  <div class="top-bar">
+    <!-- Círculo para el Logotipo -->
+    <div class="logo-circle">
+      <!-- Imagen del logotipo SVG -->
+      <img class="logo-img" src="ISO-Color-Volts.svg" alt="Logotipo">
+    </div>
+    <!-- Nombre de la Empresa -->
+    <div class="company-name">Color-Volts</div>
   </div>
-
-  <!-- Figuras Geométricas -->
-  <script>
-    function getRandomColor() {
-      const letters = '0123456789ABCDEF';
-      let color = '#';
-      for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-      }
-      return color;
-    }
-
-    function getRandomShape() {
-      const shapes = ['triangle', 'circle', 'square', 'rectangle'];
-      return shapes[Math.floor(Math.random() * shapes.length)];
-    }
-
-    function createShape() {
-      const shape = document.createElement('div');
-      shape.classList.add('shape');
-      const size = Math.floor(Math.random() * 100) + 50;
-      const color = getRandomColor();
-      const shapeType = getRandomShape();
-
-      shape.style.width = `${size}px`;
-      shape.style.height = `${size}px`;
-      shape.style.backgroundColor = color;
-
-      if (shapeType === 'triangle') {
-        shape.style.clipPath = 'polygon(50% 0%, 0% 100%, 100% 100%)';
-      } else if (shapeType === 'circle') {
-        shape.style.borderRadius = '50%';
-      } else if (shapeType === 'square') {
-        // No se necesita modificar nada, ya que es un cuadrado.
-      } else if (shapeType === 'rectangle') {
-        shape.style.width = `${size * 1.5}px`;
-        // Puedes ajustar la relación de aspecto del rectángulo cambiando el valor 1.5 según tus preferencias.
-      }
-
-      const x = Math.floor(Math.random() * window.innerWidth);
-      const y = Math.floor(Math.random() * window.innerHeight);
-      shape.style.left = `${x}px`;
-      shape.style.top = `${y}px`;
-
-      document.body.appendChild(shape);
-    }
-
-    window.addEventListener('resize', () => {
-      const shapes = document.querySelectorAll('.shape');
-      shapes.forEach(shape => {
-        const x = Math.floor(Math.random() * window.innerWidth);
-        const y = Math.floor(Math.random() * window.innerHeight);
-        shape.style.left = `${x}px`;
-        shape.style.top = `${y}px`;
-      });
-    });
-
-    for (let i = 0; i < 100; i++) {
-      createShape();
-    }
-  </script>
 
   <!-- Contenido de la página -->
   <div class="content">
     <h1>Bienvenido</h1>
     <p>Contenido de tu página aquí...</p>
   </div>
-
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('show-sidebar');
-    }
-  </script>
 </body>
 </html>
