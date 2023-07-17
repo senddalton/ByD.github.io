@@ -12,9 +12,23 @@
 
     .mosaic-container {
       display: grid;
-      grid-template-columns: repeat(3, 1fr); /* Cambia el número 3 si deseas más columnas */
+      grid-template-columns: repeat(1, 1fr); /* Un solo mosaico por defecto en dispositivos pequeños */
       gap: 10px; /* Espacio entre las imágenes */
       padding: 20px; /* Espacio alrededor del mosaico */
+    }
+
+    /* Media Query para tabletas y pantallas más grandes */
+    @media (min-width: 768px) {
+      .mosaic-container {
+        grid-template-columns: repeat(2, 1fr); /* Dos mosaicos en tabletas y pantallas más grandes */
+      }
+    }
+
+    /* Media Query para pantallas grandes */
+    @media (min-width: 1024px) {
+      .mosaic-container {
+        grid-template-columns: repeat(3, 1fr); /* Tres mosaicos en pantallas grandes */
+      }
     }
 
     .mosaic-item {
@@ -50,17 +64,17 @@
 </head>
 <body>
   <div class="mosaic-container">
-    <a href="enlace1.html" class="mosaic-item">
-      <img src="ColorVolts.png" alt="Imagen 1">
-      <div class="image-caption"><h1>Color-Volts</h1></div>
+    <a href="ColorVoltsP.html" class="mosaic-item">
+      <img src="ColorVolts.png" alt="Color-Volts">
+      <div class="image-caption">Color-Volts</div>
     </a>
-    <a href="enlace2.html" class="mosaic-item">
-      <img src="ByD.png" alt="Imagen 2">
-      <div class="image-caption"><h1>B&D</h1></div>
+    <a href="ByDP.html" class="mosaic-item">
+      <img src="ByD.png" alt="B&D">
+      <div class="image-caption">B&D</div>
     </a>
-    <a href="enlace3.html" class="mosaic-item">
-      <img src="SeND.png" alt="Imagen 3">
-      <div class="image-caption"><h1>Escuela</h1></div>
+    <a href="EscuelaP.html" class="mosaic-item">
+      <img src="SeND.png" alt="Escuela">
+      <div class="image-caption">Escuela</div>
     </a>
     <!-- Agrega más enlaces e imágenes aquí -->
   </div>
