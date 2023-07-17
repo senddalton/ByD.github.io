@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mosaico de Imágenes con Leyendas Externas</title>
+  <title>Mosaico de Imágenes con Enlaces</title>
   <style>
     body {
       margin: 0;
@@ -19,7 +19,7 @@
 
     .mosaic-item {
       display: flex;
-      position: relative; /* Posición relativa para poder posicionar el pseudo-elemento */
+      flex-direction: column; /* Para apilar la imagen y la leyenda verticalmente */
       justify-content: center;
       align-items: center;
       border: 1px solid #ddd; /* Borde para separar las imágenes (opcional) */
@@ -54,16 +54,16 @@
 </head>
 <body>
   <div class="mosaic-container">
-    <div class="mosaic-item" data-caption="Leyenda de la imagen 1">
+    <a href="enlace1.html" class="mosaic-item" data-caption="Color-Volts">
       <img src="ColorVolts.png" alt="Imagen 1">
-    </div>
-    <div class="mosaic-item" data-caption="Leyenda de la imagen 2">
+    </a>
+    <a href="enlace2.html" class="mosaic-item" data-caption="B&D">
       <img src="ByD.png" alt="Imagen 2">
-    </div>
-    <div class="mosaic-item" data-caption="Leyenda de la imagen 3">
+    </a>
+    <a href="enlace3.html" class="mosaic-item" data-caption="Escuela">
       <img src="SeND.png" alt="Imagen 3">
-    </div>
-    <!-- Agrega más imágenes aquí -->
+    </a>
+    <!-- Agrega más enlaces e imágenes aquí -->
   </div>
 </body>
 </html>
