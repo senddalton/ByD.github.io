@@ -1,66 +1,46 @@
 <html>
-  <title>Pagina de SeND
-  </title>
-  <head>
-    <style>
-      /* Sidebar Div */
-      div {
-        color: #fff;
-        width: 250px;
-        padding-left: 20px;
-        height: 100vh;
-        background-image: linear-gradient(30deg, #11cf4d, #055e21);
-        border-top-right-radius: 90px;
-      }
-  
-      /* Div header */
-      div h2 {
-        padding: 40px 0 0 0;
-        cursor: pointer;
-      }
-  
-      /* Div links */
-      div a {
-        font-size: 14px;
-        color: #fff;
-        display: block;
-        padding: 12px;
-        padding-left: 30px;
-        text-decoration: none;
-        outline: none;
-      }
-  
-      /* Div link on hover */
-      div a:hover {
-        color: #56ff38;
-        background: #fff;
-        position: relative;
-        background-color: #fff;
-        border-top-left-radius: 22px;
-        border-bottom-left-radius: 22px;
-      }
-  
-    </style>
-  </head>
-  <body>
-    <div>
-      <!-- Div Header-->
-      <h2>Color-Volts</h2>
-        
-      <!-- Links in Div -->
-      <a href="#">
-        Pintura
-      </a>
-      <a href="#">
-        Electricista
-      </a>
-      <a href="#">
-        Fontanería
-      </a>
-      <a href="#">
-        Diseño de interiores
-      </a>
-      <a href="#"> Acerca de nosotros</a>
-    </div>
-  </body>
+	<title>
+	Pagina de SeND
+	</title>
+
+	<html lang="es">
+	<head>
+	  <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <title>Mosaico de Imágenes</title>
+	  <style>
+		body {
+		  margin: 0;
+		  padding: 0;
+		}
+	
+		.mosaic-container {
+		  display: grid;
+		  grid-template-columns: repeat(3, 1fr); /* Cambia el número 3 si deseas más columnas */
+		  gap: 10px; /* Espacio entre las imágenes */
+		  padding: 20px; /* Espacio alrededor del mosaico */
+		}
+	
+		.mosaic-item {
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  border: 1px solid #ddd; /* Borde para separar las imágenes (opcional) */
+		  padding: 10px; /* Espacio alrededor de cada imagen (opcional) */
+		}
+	
+		.mosaic-item img {
+		  max-width: 100%;
+		  max-height: 100%;
+		}
+	  </style>
+	</head>
+	<body>
+	  <div class="mosaic-container">
+		<div class="mosaic-item"><img src="imagen1.jpg" alt="Imagen 1"></div>
+		<div class="mosaic-item"><img src="imagen2.jpg" alt="Imagen 2"></div>
+		<div class="mosaic-item"><img src="imagen3.jpg" alt="Imagen 3"></div>
+		<!-- Agrega más imágenes aquí -->
+	  </div>
+	</body>
 </html>
