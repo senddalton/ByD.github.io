@@ -78,6 +78,134 @@
      text-decoration: underline;
     }
     
+    /* Estilos de los enlaces de la barra inferior */
+.barra-inferior a {
+  text-decoration: none;
+  color: #fff;
+  margin-right: 20px; /* Espaciado entre los enlaces */
+}
+
+/* Estilos de los enlaces de la barra inferior al pasar el cursor sobre ellos */
+.barra-inferior a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos de la sección de presentación */
+.presentacion {
+  text-align: center;
+  padding: 40px;
+}
+
+.presentacion h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.presentacion p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.presentacion a {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+/* Estilos de la sección de cursos destacados */
+.destacados {
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.destacados h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.curso {
+  width: 300px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.curso img {
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+}
+
+.curso h3 {
+  font-size: 24px;
+  margin: 15px;
+}
+
+.curso p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 15px 15px;
+}
+
+.curso a {
+  display: block;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 0 0 5px 5px;
+}
+
+/* Estilos de la sección de testimonios */
+.testimonios {
+  background-color: #f9f9f9;
+  padding: 40px;
+}
+
+.testimonios h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.testimonial {
+  width: 300px;
+  margin: 20px;
+  text-align: center;
+}
+
+.testimonial img {
+  max-width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.testimonial p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0 15px 10px;
+}
+
+.testimonial span {
+  font-weight: bold;
+}
+    
     /* Media queries para pantallas pequeñas */
     @media screen and (max-width: 767px) {
       body {
@@ -156,12 +284,49 @@
     <nav>
       <ul>
         <li><a href="#">Inicio</a></li>
-        <li><a href="#">Cursos</a></li>
       </ul>
     </nav>
   </header>
 
-  <main></main>
+<main>
+    <section class="presentacion">
+    <h1>Bienvenido a nuestra Empresa de Cursos</h1>
+    <p>En nuestro sitio web, encontrarás una amplia variedad de cursos diseñados para mejorar tus habilidades y conocimientos en diferentes áreas. ¡Descubre nuestras opciones de aprendizaje y comienza a crecer profesionalmente!</p>
+    <a href="#">Explora nuestros cursos</a>
+  </section>
+
+  <section class="destacados">
+    <h2>Cursos Destacados</h2>
+    <div class="curso">
+      <img src="curso1.jpg" alt="Curso 1">
+      <h3>Curso de Marketing Digital</h3>
+      <p>Domina las estrategias de marketing en línea y aprende a aprovechar las redes sociales para aumentar el alcance de tu negocio.</p>
+      <a href="#">Más información</a>
+    </div>
+    <div class="curso">
+      <img src="curso2.jpg" alt="Curso 2">
+      <h3>Curso de Desarrollo Web</h3>
+      <p>Aprende a crear sitios web interactivos y funcionales utilizando las últimas tecnologías y lenguajes de programación.</p>
+      <a href="#">Más información</a>
+    </div>
+    <!-- Agrega más cursos destacados si lo deseas -->
+  </section>
+
+  <section class="testimonios">
+    <h2>Testimonios de nuestros estudiantes</h2>
+    <div class="testimonial">
+      <img src="usuario1.jpg" alt="Usuario 1">
+      <p>"El curso de marketing digital superó mis expectativas. Ahora puedo aplicar las estrategias aprendidas en mi negocio y ha tenido un impacto positivo en mis ventas."</p>
+      <span>- Ana G., Empresaria</span>
+    </div>
+    <div class="testimonial">
+      <img src="usuario2.jpg" alt="Usuario 2">
+      <p>"Gracias al curso de desarrollo web, pude conseguir un empleo en una empresa de tecnología. Estoy muy agradecido por esta oportunidad de aprendizaje."</p>
+      <span>- Luis M., Desarrollador Web</span>
+    </div>
+    <!-- Agrega más testimonios si lo deseas -->
+  </section>
+</main>
 
   <footer class="barra-inferior">
     <nav>
