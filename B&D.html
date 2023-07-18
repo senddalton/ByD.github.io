@@ -33,6 +33,17 @@
      right: 0;
     }
 
+    .barra-inferior {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
     /* Estilos del logo */
     .logo img {
       width: 50px; /* Tamaño del logo */
@@ -84,6 +95,10 @@
       .barra-superior {
         padding: 5px; /* Ajustar el espaciado para pantallas pequeñas */
       }
+
+      .barra-inferior a {
+        margin-right: 10px; /* Reducir el espaciado entre los enlaces para pantallas pequeñas */
+      }
     
       nav li {
         margin-right: 10px; /* Ajustar el margen de los elementos del menú */
@@ -116,6 +131,10 @@
         padding: 15px; /* Ajustar el espaciado para pantallas medianas */
       }
 
+      .barra-inferior a {
+        margin-right: 15px; /* Reducir el espaciado entre los enlaces para pantallas medianas */
+      }
+
       .logo img {
         max-height: 35px; /* Ajustar el tamaño del logo para pantallas medianas */
       }
@@ -138,9 +157,21 @@
       <ul>
         <li><a href="#">Inicio</a></li>
         <li><a href="#">Cursos</a></li>
-        <li><a href="#">Contacto</a></li>
       </ul>
     </nav>
   </header>
+
+  <main></main>
+
+  <footer class="barra-inferior">
+    <nav>
+      <ul>
+        <li><a href="#">Acerca de</a></li>
+        <li><a href="#">Contactanos</a></li>
+        <li><a href="#">Política de privacidad</a></li>
+      </ul>
+    </nav>
+  </footer>
+
 </body>
 </html>
