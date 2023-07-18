@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Título de la Página</title>
+  <style>/* Estilos generales para todas las pantallas */
+    body {
+      background-image: linear-gradient(30deg, #11cf4d, #055e21);
+      color: #333;
+      font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+      color: #0066cc;
+    }
+    
+    p {
+      font-size: 16px;
+    }
+
+    /* Estilos de la barra superior */
+    .barra-superior {
+     background-color: #333;
+     color: #fff;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 10px;
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+    }
+
+    /* Estilos del logo */
+    .logo img {
+      width: 50px; /* Tamaño del logo */
+      height: auto; /* Mantener la proporción del logo */
+    }
+
+/* Estilos del nombre de la empresa */
+    .nombre-empresa {
+      font-size: 24px; /* Tamaño del texto */
+      font-family: cursive;
+    }
+
+/* Estilos del menú */
+    nav ul {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+     display: flex;
+    }
+
+    nav li {
+     margin-right: 20px;
+    }
+
+    nav a {
+     text-decoration: none;
+      color: #fff;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    nav a:hover {
+     text-decoration: underline;
+    }
+    
+    /* Media queries para pantallas pequeñas */
+    @media screen and (max-width: 767px) {
+      body {
+        font-size: 14px;
+      }
+    
+      h1 {
+        font-size: 24px;
+      }
+    
+      p {
+        font-size: 14px;
+      }
+
+      .barra-superior {
+        padding: 5px; /* Ajustar el espaciado para pantallas pequeñas */
+      }
+    
+      nav li {
+        margin-right: 10px; /* Ajustar el margen de los elementos del menú */
+      }
+
+      .logo img {
+        max-height: 30px; /* Ajustar el tamaño del logo para pantallas pequeñas */
+      }
+    
+      .nombre-empresa h1 {
+        font-size: 16px; /* Ajustar el tamaño del nombre de la empresa para pantallas pequeñas */
+      }
+    }
+    
+    /* Media queries para pantallas medianas */
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+      body {
+        font-size: 16px;
+      }
+    
+      h1 {
+        font-size: 28px;
+      }
+    
+      p {
+        font-size: 16px;
+      }
+
+      .barra-superior {
+        padding: 15px; /* Ajustar el espaciado para pantallas medianas */
+      }
+
+      .logo img {
+        max-height: 35px; /* Ajustar el tamaño del logo para pantallas medianas */
+      }
+    
+      .nombre-empresa h1 {
+        font-size: 18px; /* Ajustar el tamaño del nombre de la empresa para pantallas medianas */
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="barra-superior">
+    <div class="logo">
+      <img src="ByD.png" alt="Logo">
+    </div>
+    <div class="nombre-empresa">
+      B&D
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Cursos</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+</body>
+</html>
